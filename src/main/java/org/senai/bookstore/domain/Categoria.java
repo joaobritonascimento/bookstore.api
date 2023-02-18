@@ -1,12 +1,28 @@
 package org.senai.bookstore.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Categoria {
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
+import javax.persistence.*;
+
+@Entity // Pode-se passar um nome para a tabela (name = ""), se ficar sem nada a tabela se chamara o nome da classe
+
+public class Categoria implements Serializable{
+
+    private static final long serialVersionUID=1L; //1L define que essa é a primeira versão da classe.
+
+    @Id //Informa que o id é uma chave primaria
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer id;
     private String nome;
     private String descricao;
+
+    @OneToMany(mappedBy ="categoria")
 
     private List<Livro> livros = new ArrayList<>();
 

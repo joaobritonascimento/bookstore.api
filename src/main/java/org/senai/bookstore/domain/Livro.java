@@ -1,12 +1,34 @@
 package org.senai.bookstore.domain;
 
-public class Livro {
+import java.io.Serializable;
+
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
+import javax.persistence.*;
+
+@Entity
+
+public class Livro implements Serializable{ 
+
+    private static final long serialVersionUID=1L; //1L define que essa é a primeira versão da classe.
+
+    @Id //Informa que o id é uma chave primaria
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer id;
     private String titulo;
     private String nome_autor;
     private String texto;
 
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+
     private Categoria categoria;
+
+    public Livro(){
+        super();
+    }
 
     public Livro(Integer id, String titulo, String nome_autor, String texto, Categoria categoria) {
         super ();
