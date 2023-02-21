@@ -15,7 +15,7 @@ import org.senai.bookstore.repositores.LivroRepository;
 @SpringBootApplication
 public class BookstoreApplication implements CommandLineRunner{
 
-	@Autowired
+	@Autowired //Camadas de acesso a dados
 	private CategoriaRepository categoriaRepository;
     @Autowired
 	private LivroRepository livroRepository;
@@ -32,7 +32,7 @@ public class BookstoreApplication implements CommandLineRunner{
 
 		cat1.getLivros().addAll(Arrays.asList(l1));
 
-		this.categoriaRepository.saveAll(Arrays.asList(cat1));
+		this.categoriaRepository.saveAll(Arrays.asList(cat1)); //Salva tudo de uma vez só
 		this.livroRepository.saveAll(Arrays.asList(l1));
 	}
 	
