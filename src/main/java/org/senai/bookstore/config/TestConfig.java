@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 @Configuration
-@Profile("test") //Noem do perfil test
+@Profile("test") //Nome do perfil test
 public class TestConfig {
     
     @Autowired
