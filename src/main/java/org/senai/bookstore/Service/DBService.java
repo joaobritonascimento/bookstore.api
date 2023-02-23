@@ -1,4 +1,4 @@
-package org.senai.bookstore.Service;
+package org.senai.bookstore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,8 +7,8 @@ import java.util.Arrays;
 
 import org.senai.bookstore.domain.Categoria;
 import org.senai.bookstore.domain.Livro;
-import org.senai.bookstore.repositores.CategoriaRepository;
-import org.senai.bookstore.repositores.LivroRepository;
+import org.senai.bookstore.repositories.CategoriaRepository;
+import org.senai.bookstore.repositories.LivroRepository;
 
 @Service
 public class DBService {

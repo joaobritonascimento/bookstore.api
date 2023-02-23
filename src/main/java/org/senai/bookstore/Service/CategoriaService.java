@@ -1,9 +1,10 @@
-package org.senai.bookstore.Service;
+package org.senai.bookstore.service;
 
 import java.util.Optional;
 
 import org.senai.bookstore.domain.Categoria;
-import org.senai.bookstore.repositores.CategoriaRepository;
+import org.senai.bookstore.repositories.CategoriaRepository;
+import org.senai.bookstore.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ public class CategoriaService {
 
     public Categoria findById (Integer id){
         Optional<Categoria> obj = repository.findById(id); 
-        return obj.orElse(null);
+        return obj.orElseThrow(() -> new ObjectNotFoundException(
+            "Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 }
 }
