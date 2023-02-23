@@ -20,29 +20,33 @@ public class CategoriaService {
     @Autowired
     private CategoriaRepository repository;
 
-    public Categoria findById (Integer id){
+    //Metodo findById
+    public Categoria findById (Integer id){ 
         Optional<Categoria> obj = repository.findById(id); 
         return obj.orElseThrow(() -> new ObjectNotFoundException(
             "Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 }
-
-    public List<Categoria> findAll(){
+    //Metodo findAll
+    public List<Categoria> findAll(){ 
         return repository.findAll();
     }
-
-    public Categoria create(Categoria obj){
+    
+    //Metodo create
+    public Categoria create(Categoria obj){ 
         obj.setId(null);
         return repository.save(obj);
     }
 
-    public Categoria update(Integer id, CategoriaDTO objDto) {
+    //Metodo update
+    public Categoria update(Integer id, CategoriaDTO objDto) { 
         Categoria obj = findById(id);
         obj.setNome(objDto.getNome());
         obj.setDescricao(objDto.getDescricao());
         return repository.save(obj);
     }
 
-    public void delete(Integer id) {
+    // metodo delete
+    public void delete(Integer id) { 
         findById(id);
         try {
             repository.deleteById(id);

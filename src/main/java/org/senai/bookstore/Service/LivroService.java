@@ -27,7 +27,7 @@ public class LivroService {
 
     public List<Livro> findAll(Integer id_cat) {
         categoriaService.findById(id_cat);
-        return repository.findAllByCategoria(id_cat);
+        return repository.findAllByCategoria(id_cat); //
     }
     
 }
