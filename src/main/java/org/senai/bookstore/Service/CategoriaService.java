@@ -47,7 +47,7 @@ public class CategoriaService {
         try {
             repository.deleteById(id);
         } catch (org.springframework.dao.DataIntegrityViolationException e) {
-            throw new DataIntegrityViolationException("Categoria não pode ser deletada, possui objetos associados!");
+            throw new DataIntegrityViolationException("Categoria não pode ser deletada! Possui objetos associados!");
            
         }
     }
