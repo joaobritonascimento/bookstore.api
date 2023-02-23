@@ -6,9 +6,11 @@ import java.util.Optional;
 import org.senai.bookstore.domain.Categoria;
 import org.senai.bookstore.dtos.CategoriaDTO;
 import org.senai.bookstore.repositories.CategoriaRepository;
+import org.senai.bookstore.service.exceptions.DataIntegrityViolationException;
 import org.senai.bookstore.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 //import org.senai.bookstore.domain.Categoria;
 
@@ -42,6 +44,11 @@ public class CategoriaService {
 
     public void delete(Integer id) {
         findById(id);
-        repository.deleteById(id);
+        try {
+            repository.deleteById(id);
+        } catch (org.springframework.dao.DataIntegrityViolationException e) {
+            throw new DataIntegrityViolationException("Categoria não pode ser deletada, possui objetos associados!");
+           
+        }
     }
 }
