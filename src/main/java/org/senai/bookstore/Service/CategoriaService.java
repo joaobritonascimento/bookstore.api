@@ -9,6 +9,8 @@ import org.senai.bookstore.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+//import org.senai.bookstore.domain.Categoria;
+
 @Service
 public class CategoriaService {
     
@@ -23,5 +25,10 @@ public class CategoriaService {
 
     public List<Categoria> findAll(){
         return repository.findAll();
+    }
+
+    public Categoria create(Categoria obj){
+        obj.setId(null);
+        return repository.save(obj);
     }
 }
