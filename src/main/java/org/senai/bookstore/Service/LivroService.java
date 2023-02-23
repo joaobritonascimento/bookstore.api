@@ -3,11 +3,13 @@ package org.senai.bookstore.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.senai.bookstore.domain.Livro;
 import org.senai.bookstore.repositories.LivroRepository;
 import org.senai.bookstore.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import org.senai.bookstore.domain.Categoria;
+import org.senai.bookstore.domain.Livro;
 
 @Service
 public class LivroService {
@@ -40,6 +42,13 @@ public class LivroService {
         newObj.setTitulo(obj.getTitulo());
         newObj.setNome_autor(obj.getNome_autor());
         newObj.setTexto(obj.getTexto());
+    }
+
+    public Livro create(Integer id_cat, Livro obj) {
+        obj.setId(null);
+        Categoria cat = categoriaService.findById(id_cat);
+        obj.setCategoria(cat);
+        return repository.save(obj);
     }
 
     
