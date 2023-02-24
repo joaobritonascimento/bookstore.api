@@ -1,13 +1,13 @@
-package org.senai.bookstore.service;
+package org.senai.bookstore.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+import org.senai.bookstore.Service.exceptions.DataIntegrityViolationException;
+import org.senai.bookstore.Service.exceptions.ObjectNotFoundException;
 import org.senai.bookstore.domain.Categoria;
 import org.senai.bookstore.dtos.CategoriaDTO;
 import org.senai.bookstore.repositories.CategoriaRepository;
-import org.senai.bookstore.service.exceptions.DataIntegrityViolationException;
-import org.senai.bookstore.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
