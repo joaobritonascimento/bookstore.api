@@ -55,5 +55,4 @@ public class LivroService {
       Livro obj = findById(id);
       repository.delete(obj);  
     }
-    
 }

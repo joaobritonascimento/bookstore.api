@@ -8,6 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 
 @Entity // Pode-se passar um nome para a tabela (name = ""), se ficar sem nada a tabela se chamara o nome da classe
@@ -19,7 +23,13 @@ public class Categoria implements Serializable{
     @Id //Informa que o id é uma chave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer id;
+
+    @NotEmpty(message = "Campo NOME é obrigatório")
+    @Length(min =3, max = 100, message = "O campo NOME de deve entre 3 e 100 caracteres")
     private String nome;
+    
+    @NotEmpty(message = "Campo DESCRIÇÃO é obrigatório")
+    @Length(min =3, max = 200, message = "O campo DESCRIÇÃO de deve entre 3 e 200 caracteres")
     private String descricao;
 
     @OneToMany(mappedBy ="categoria")

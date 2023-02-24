@@ -5,6 +5,7 @@ public class StandardError {
     private Long timestamp;
     private Integer status;
     private String error;
+    
     public StandardError() {
         super();
     }
