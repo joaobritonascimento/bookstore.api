@@ -2,8 +2,8 @@ package org.senai.bookstore.resources.exceptions;
 
 import javax.servlet.ServletRequest;
 
-import org.senai.bookstore.Service.exceptions.DataIntegrityViolationException;
-import org.senai.bookstore.Service.exceptions.ObjectNotFoundException;
+import org.senai.bookstore.service.exceptions.DataIntegrityViolationException;
+import org.senai.bookstore.service.exceptions.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

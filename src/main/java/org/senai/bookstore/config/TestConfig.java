@@ -1,6 +1,6 @@
 package org.senai.bookstore.config;
 
-import org.senai.bookstore.Service.DBService;
+import org.senai.bookstore.service.DBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-import org.senai.bookstore.Service.LivroService;
 import org.senai.bookstore.domain.Livro;
 import org.senai.bookstore.dtos.LivroDTO;
+import org.senai.bookstore.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

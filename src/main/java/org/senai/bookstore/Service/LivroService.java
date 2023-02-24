@@ -1,12 +1,12 @@
-package org.senai.bookstore.Service;
+package org.senai.bookstore.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.senai.bookstore.repositories.LivroRepository;
+import org.senai.bookstore.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.senai.bookstore.Service.exceptions.ObjectNotFoundException;
 import org.senai.bookstore.domain.Categoria;
 import org.senai.bookstore.domain.Livro;
 

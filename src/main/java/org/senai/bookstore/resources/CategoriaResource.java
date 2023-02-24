@@ -19,9 +19,9 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-import org.senai.bookstore.Service.CategoriaService;
 import org.senai.bookstore.domain.Categoria;
 import org.senai.bookstore.dtos.CategoriaDTO;
+import org.senai.bookstore.service.CategoriaService;
 
 @CrossOrigin("*")//O endpoint "/livros" pode receber requisições de diversas fontes
 @RestController
