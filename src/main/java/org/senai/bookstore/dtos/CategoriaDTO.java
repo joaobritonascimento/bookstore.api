@@ -12,9 +12,11 @@ public class CategoriaDTO implements Serializable{
     private static final long serialVersionUID=1l;
 
     private Integer id;
+    
     @NotEmpty(message = "Campo NOME é obrigatório")
     @Length(min =3, max = 100, message = "O campo NOME de deve entre 3 e 100 caracteres")
     private String nome;
+
     @NotEmpty(message = "Campo DESCRIÇÃO é obrigatório")
     @Length(min =3, max = 200, message = "O campo DESCRIÇÃO de deve entre 3 e 200 caracteres")
     private String descricao;
