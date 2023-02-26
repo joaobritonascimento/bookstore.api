@@ -21,7 +21,7 @@ public class Categoria implements Serializable{
     private static final long serialVersionUID=1L; //1L define que essa é a primeira versão da classe.
 
     @Id //Informa que o id é uma chave primaria
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotEmpty(message = "Campo NOME é obrigatório")
