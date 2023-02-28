@@ -25,6 +25,7 @@ public class CategoriaDTO implements Serializable { // a classe Serializable é 
         super();
     }
 
+    //Criação do metodo construtor
     public CategoriaDTO(Categoria obj) {
         super();
         this.id = obj.getId();
