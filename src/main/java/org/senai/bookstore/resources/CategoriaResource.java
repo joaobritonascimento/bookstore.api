@@ -40,7 +40,7 @@ public class CategoriaResource {
     @GetMapping
     public ResponseEntity<List<CategoriaDTO>> findAll(){
         List<Categoria> list = service.findAll();
-        List<CategoriaDTO> listDTO = list.stream().map(obj -> new CategoriaDTO(obj)).collect(Collectors.toList());
+        List<CategoriaDTO> listDTO = list.stream().map(obj -> new CategoriaDTO(obj)).collect(Collectors.toList()); //conversao dos dados
         return ResponseEntity.ok().body(listDTO);
     }
 
