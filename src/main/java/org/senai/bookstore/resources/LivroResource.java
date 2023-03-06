@@ -39,8 +39,8 @@ public class LivroResource {
         return ResponseEntity.ok().body(obj);
             }
     @GetMapping //Exemplo de pesquisa -> localhost:8080/livros?categoria=1
-    public ResponseEntity<List<LivroDTO>> findAll(@RequestParam(value = "categoria", 
-    defaultValue="0") Integer id_cat){ //o defaultValue=0 retorna uma categoria que nao existe e retorna uma exceção
+    public ResponseEntity<List<LivroDTO>> findAll(@RequestParam(value = "categoria", defaultValue="0") 
+        Integer id_cat){ //o defaultValue=0 retorna uma categoria que nao existe e retorna uma exceção
         List<Livro> list = service.findAll(id_cat);
         List<LivroDTO> listDTO = list.stream().map(obj -> new LivroDTO(obj))
         .collect(Collectors.toList());//Converteu a lista de livros para a lista livroDTO

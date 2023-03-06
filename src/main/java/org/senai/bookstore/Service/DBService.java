@@ -15,7 +15,8 @@ public class DBService {
 
     @Autowired //Camadas de acesso a dados
 	private CategoriaRepository categoriaRepository;
-    @Autowired
+
+    @Autowired //Camadas de acesso a dados
 	private LivroRepository livroRepository;
 
     public void instanciaBaseDeDados(){

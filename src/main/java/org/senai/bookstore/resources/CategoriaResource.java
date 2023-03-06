@@ -23,9 +23,9 @@ import org.senai.bookstore.domain.Categoria;
 import org.senai.bookstore.dtos.CategoriaDTO;
 import org.senai.bookstore.service.CategoriaService;
 
-@CrossOrigin("*")//O endpoint "/livros" pode receber requisições de diversas fontes
-@RestController
-@RequestMapping(value ="/categorias") // exemplo: localhost:8080/categoria/1 <-id
+@CrossOrigin("*")//O endpoint "/livros" pode receber requisições de diversas fontes.
+@RestController //É usada para definir uma classe de controlador especializada para serviços da Web RESTful.
+@RequestMapping(value ="/categorias") // exemplo: localhost:8080/categoria/1 <-id.
 public class CategoriaResource {
 
     @Autowired
@@ -44,7 +44,7 @@ public class CategoriaResource {
         return ResponseEntity.ok().body(listDTO);
     }
 
-    @PostMapping
+    @PostMapping  //Gravação no banco de dados
     public ResponseEntity<Categoria> create(@Valid @RequestBody Categoria obj){
         obj = service.create(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
