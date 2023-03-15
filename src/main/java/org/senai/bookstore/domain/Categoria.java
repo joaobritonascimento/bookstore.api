@@ -12,15 +12,18 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.*;
+import javax.persistence.OneToMany;
 
-@Entity // Pode-se passar um nome para a tabela (name = ""), se ficar sem nada a tabela se chamara o nome da classe
+/*O @Entity informa que a classe Categoria.java é uma tabela no bd. 
+Pode-se passar um nome para a tabela (name = ""), 
+se ficar sem nada a tabela se chamara o nome da classe*/
+@Entity 
 
 public class Categoria implements Serializable{
 
     private static final long serialVersionUID=1L; //1L define que essa é a primeira versão da classe.
 
-    @Id //Informa que o id é uma chave primaria
+    @Id //Informa que o id é uma chave primaria da tabela categoria
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -32,8 +35,9 @@ public class Categoria implements Serializable{
     @Length(min =3, max = 200, message = "O campo DESCRIÇÃO de deve entre 3 e 200 caracteres")
     private String descricao;
 
-    @OneToMany(mappedBy ="categoria")
-
+    /*Informa uma categoria para varios livros, 
+    outras opções @ManyToOne, @OneToOne, @ManyToMany*/
+    @OneToMany(mappedBy ="categoria") 
     private List<Livro> livros = new ArrayList<>();
 
     public Categoria(){

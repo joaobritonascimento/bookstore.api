@@ -6,7 +6,12 @@ import java.io.Serializable;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 //import javax.persistence.Id;
-import javax.persistence.*;
+import javax.persistence.ManyToOne;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
@@ -36,7 +41,7 @@ public class Livro implements Serializable{
     private String texto;
 
     @JsonIgnore
-    @ManyToOne
+    @ManyToOne //Relação varios livros para uma categoria
     @JoinColumn(name = "categoria_id")
 
     private Categoria categoria;
